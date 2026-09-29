@@ -79,6 +79,8 @@ Notice that on 2026-09-17, the first two intervals (`@48` and `@47`) share no ga
 
 ## Installation
 
+**Please note** you need **Python 3.10** or later to run this extension.
+
 ### 1. Find your extensions directory
 
 The path depends on your OS and how Timewarrior was installed. The safest way is to ask Timewarrior itself:
