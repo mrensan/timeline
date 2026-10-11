@@ -122,11 +122,11 @@ timew timeline
 
 ## Configuration
 
-`timeline` reads your `timewarrior.cfg` for a single optional setting:
+The config file location depends on your OS and installation method. Run `timew diagnostics` to find it.
 
-| Key | Type | Default | Description |
-|---|---|---|---|
-| `timeline.min_break` | integer (seconds) | `300` | Gaps shorter than this are merged; longer gaps are treated as real breaks. |
+### Minimum break threshold
+
+`timeline` reads your `timewarrior.cfg` for a single optional setting:
 
 Add the line to your `timewarrior.cfg` to override the default. For example, to use a 10-minute threshold:
 
@@ -134,7 +134,21 @@ Add the line to your `timewarrior.cfg` to override the default. For example, to 
 timeline.min_break=600
 ```
 
-The config file location depends on your OS and installation method. Run `timew diagnostics` to find it.
+### Default Range
+
+`timeline` defaults to all data if no range is specified. You can change this by adding a `reports.timeline.range` 
+setting to your `timewarrior.cfg`. For example, to default to the current day:
+
+```
+reports.timeline.range = day
+```
+
+### Summary
+
+| Key | Type | Default | Description |
+|---|---|---|---|
+| `timeline.min_break` | integer (seconds) | `300` | Gaps shorter than this are merged; longer gaps are treated as real breaks. |
+| `reports.timeline.range` | string | `all` | Default range for the timeline report, can be `day`, `week`, `month`, etc. |
 
 ## How it works (for extension authors)
 
